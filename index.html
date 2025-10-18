@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Profile Card</title>
+  </head>
+  <body>
+    <article data-testid="profile-card">
+      <header>
+        <figure class="profile-card__avatar-figure">
+          <img
+            src="img/CHIDINMA PICTURE.jpg"
+            alt=" Chidinma Ihejiofor Profile Picture"
+            class="profile-card__avatar"
+            data-testid="test-user-avatar"
+          />
+          <figcaption>
+            <h2 data-testid="test-user-name">Chidinma Ihejiofor</h2>
+          </figcaption>
+        </figure>
+      </header>
+
+      <!-- Short Biography -->
+      <p data-testid="test-user-bio">
+        A passionate web developer who<br />
+        loves learning and crafting accessible web experiences.
+      </p>
+
+      <p class="profile-user-time">
+        <span class="profile-user-label">Last updated:</span>
+        <time data-testid="test-user-time" class="profile-card__time"
+          >Loading...</time
+        >
+      </p>
+
+      <!-- Social Links -->
+      <nav data-testid="test-user-social-links" aria-label="Social Media Links">
+        <ul>
+          <li>
+            <a
+              href="Check out Chidinma_ihejiofor (@Mma96796423): https://x.com/Mma96796423?t=HHq-e8KMCHtHGqcE51AQpg&s=08"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-twitter"
+              >Twitter</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/chidinma-ihejiofor-acipm-459752217"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-linkedin"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/chijane111"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-github"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hobbies Section -->
+      <section>
+        <h3>Hobbies</h3>
+        <ul data-testid="test-user-hobbies">
+          <li>Coding</li>
+          <li>Photography</li>
+          <li>Reading</li>
+        </ul>
+      </section>
+
+      <!-- Dislikes Section -->
+      <section>
+        <h3>Dislikes</h3>
+        <ul data-testid="test-user-dislikes">
+          <li>Noise</li>
+          <li>Procrastination</li>
+          <li>Dirty</li>
+        </ul>
+      </section>
+    </article>
+    <script src="card.js"></script>
+  </body>
+</html>
