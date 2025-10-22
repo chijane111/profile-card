@@ -1,0 +1,503 @@
+/* ============================================
+   CONTACT PAGE STYLES
+   ============================================ */
+
+/* Import shared color variables (if needed separately) */
+:root {
+  --picton-blue: #00a6fbff;
+  --steel-blue: #0582caff;
+  --lapis-lazuli: #006494ff;
+  --prussian-blue: #003554ff;
+  --rich-black: #051923ff;
+  --white: #ffffff;
+  --error-red: #ff4444;
+  --success-green: #00c853;
+}
+
+/* Reset for contact page specific elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling for contact page */
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--rich-black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* ============================================
+   CONTACT PAGE LAYOUT
+   ============================================ */
+
+.contact-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--prussian-blue);
+  border: 2px solid var(--steel-blue);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 166, 251, 0.2);
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   CONTACT PAGE HEADER
+   ============================================ */
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--steel-blue);
+}
+
+.contact-header h1 {
+  color: var(--picton-blue);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.contact-header p {
+  color: #e8f0f7;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group (field container) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Form Labels */
+.form-label {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.required {
+  color: var(--error-red);
+  margin-left: 3px;
+  font-weight: 700;
+}
+
+/* Form Inputs and Textarea */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--lapis-lazuli);
+  border: 2px solid var(--steel-blue);
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Placeholder styling */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* Focus state */
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--picton-blue);
+  box-shadow: 0 0 0 3px rgba(0, 166, 251, 0.2);
+  background-color: var(--prussian-blue);
+}
+
+/* Hover state */
+.form-input:hover,
+.form-textarea:hover {
+  border-color: var(--picton-blue);
+}
+
+/* Textarea specific styles */
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   ERROR HANDLING
+   ============================================ */
+
+/* Error Messages */
+.error-message {
+  color: var(--error-red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(255, 68, 68, 0.1);
+  border-radius: 4px;
+  border-left: 3px solid var(--error-red);
+}
+
+/* Input error state */
+.input-error {
+  border-color: var(--error-red) !important;
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2);
+  border-color: var(--error-red) !important;
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.input-error {
+  animation: shake 0.5s;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+
+.submit-btn {
+  padding: 0.875rem 2rem;
+  background-color: var(--picton-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+  background-color: var(--steel-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 166, 251, 0.4);
+}
+
+/* Button focus effect */
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 166, 251, 0.3);
+}
+
+/* Button active (click) effect */
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 166, 251, 0.3);
+}
+
+/* Button disabled state */
+.submit-btn:disabled {
+  background-color: var(--steel-blue);
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Ripple effect on button click */
+.submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.submit-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ============================================
+   SUCCESS MESSAGE
+   ============================================ */
+
+.success-message {
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.2) 0%, rgba(0, 200, 83, 0.05) 100%);
+  border: 2px solid var(--success-green);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  display: none;
+  animation: slideIn 0.5s ease-in;
+  box-shadow: 0 4px 20px rgba(0, 200, 83, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-message h2 {
+  color: var(--success-green);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.success-message p {
+  color: var(--white);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Success icon (optional - can add with ::before) */
+.success-message h2::before {
+  content: '✓';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--success-green);
+  color: var(--white);
+  border-radius: 50%;
+  line-height: 40px;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet and up (768px+) */
+@media (min-width: 768px) {
+  .contact-page {
+    padding: 3rem 2rem;
+  }
+
+  .contact-container {
+    padding: 3rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-header p {
+    font-size: 1.1rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .submit-btn {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+  }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-container {
+    padding: 1.5rem;
+  }
+
+  .contact-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .contact-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .contact-header p {
+    font-size: 0.95rem;
+  }
+
+  .form-group {
+    gap: 0.4rem;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Small mobile (max 480px) */
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .contact-container {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-header p {
+    font-size: 0.9rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .success-message {
+    padding: 1.5rem;
+  }
+
+  .success-message h2 {
+    font-size: 1.5rem;
+  }
+
+  .success-message p {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.submit-btn:focus-visible {
+  outline: 3px solid var(--picton-blue);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-input,
+  .form-textarea {
+    border-width: 3px;
+  }
+
+  .submit-btn {
+    border: 2px solid var(--white);
+  }
+
+  .error-message {
+    border-width: 4px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .submit-btn::after {
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .contact-page {
+    padding: 0;
+  }
+
+  .contact-container {
+    border: none;
+    box-shadow: none;
+  }
+
+  .submit-btn {
+    display: none;
+  }
+}
